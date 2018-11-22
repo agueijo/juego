@@ -1,0 +1,182 @@
+
+         Juego de Preguntas y Respuestas (cliente/servidor)
+
+                        Internetworking
+
+             Universidad Tecnológica Nacional
+                 Facultad Regional La Plata
+                  Buenos Aires - Argentina
+                      Diciembre 2001
+
+                       Agustín Eijo
+                    agu@frlp.utn.edu.ar
+
+                       Andres Artola
+                   andres_artola@yahoo.com
+
+
+1 - Descripción del juego:
+
+
+	El juego consiste en una serie de diez preguntas de opción múltiple de internetworking. Las cuales serán tomadas de una base de datos en forma aleatoria y deberán ser contestadas por los jugadores. 
+
+	Al finalizar las diez respuestas se mostrara un cuadro de puntajes indicando a los participantes el resultado final del juego.
+
+	Puntuación: cada respuesta correcta sumara un punto al participante, el jugador que al finalizar el juego obtenga mas puntaje será el ganador, en caso de igualdad de puntos el que menos tiempo haya tardado en responder las diez preguntas gana.
+
+
+2 - Descripción del funcionamiento del software:
+
+El software contará con dos módulos: 
+* El servidor: encargado de realizar preguntas a los jugadores, 
+* Los clientes: participantes del juego.
+
+2.1 - Servidor:
+
+Deberá ser ejecutado con anterioridad a los clientes, y tendrá dos etapas en un primer momento solo aceptara conexiones, el primero en crear un juego tendrá el control del mismo los demás participantes podrán unirse o no al juego, cuando el creador del juego lo decida comenzara el juego.
+
+Luego de la orden de comenzar juego, el servidor toma en forma aleatoria de una base de datos la primer pregunta a realizar, y la envía a todos los clientes quedando de esta manera en modo escucha esperando por las respuestas de los clientes, cada respuesta será la opción elegida por el jugador, en ese momento debe validarse la respuesta y almacenar el puntaje correspondiente, enviando el resultado para luego enviar la siguiente pregunta. Al finalizar las diez preguntas se le envía al cliente el puntaje obtenido y el tiempo que tardo en responder las diez preguntas. Al finalizar el juego se enviara una tabla comparativa indicando el puntaje obtenido y el tiempo de respuesta de cada jugador que ya terminaron de jugar y se quedara esperando el resultado de los jugadores que aun no hayan terminado.
+
+Las Preguntas serán almacenadas en un archivo de texto preg.txt con el siguiente formato
+
+	Pregunta 1
+	1 - Opcion 1
+	2 - Opcion 2
+	3 - Opcion 3
+	[Respuesta correcta (1 o 2 o 3) ]
+	Pregunta 2
+	1 - Opcion 1
+	2 - Opcion 2
+	3 - Opcion 3
+	[Respuesta correcta (1 o 2 o 3) ]
+	Pregunta n 
+	...
+
+2.2 - Esquema del código servidor:
+
+	empezar=false
+	while ( not empezar )
+		EsperarConexion
+		If ( jugadornuevo ) then
+			If (nombre_valido) then
+				Conexión_OK [1]
+				Agregar_Jugador (Nombre)
+			else
+				Conexión_Rechazada [2]
+			endif
+		endif
+		If ( lista_jugadores ) then
+			Enviar_Lista_Jugadores [3]
+		endif
+		if ( crear_juego ) then
+			If (sin_juego) then
+				Juego_Creado [4]	
+			else
+				Rechazar_Juego [5]
+			endif
+		endif
+		if ( unir_juego ) then
+			jugador_listo	
+		endif
+		If ( sin_creador ) then
+			Avisar_sin_Juego [6]
+		endif
+		if ( empezar ) then
+			empezar=true	
+		endif		
+	endw 
+	for Jugadores_Conectados
+		Avisar_Comienzo [7]
+		Enviar _Pregunta(1) [8]
+	endfor
+	while ( ExistanJugadores )
+		Resp_Jugador = Esperar_Respuesta
+		Evaluar(Resp_Jugador)
+		If (not Termino_Responder) then
+			Enviar_Resultado_Resp [9]
+			Enviar _Pregunta (siguiente) [8]
+		else
+			Enviar_Resumen [10]
+		endif
+	endw
+
+* Mensajes que se envían por la red:
+
+[1] 	CONE OK
+[2]	DUPL
+[3]	[Jugador] esta conectado.
+	LIST FIN
+[4]	CREA OK
+[5]	CREA NO
+[6]	JUNO
+[7]	EMPE
+[8]	¿Pregunta?
+	1- Opción 1
+	2- Opción 2
+	3- Opción 3
+[9]	RESP [1|0]
+[10]	[Jugador] [Puntuación] [Tiempo]
+	RESU FIN
+
+ 2.3 - Cliente:
+
+	Una vez ejecutado el cliente deberá ingresar el nombre, si todavía no se creo un juego tiene la posibilidad de crearlo en caso contrario podrá decidir entre unirse o no al juego, cuando el creador del juego lo decida comenzará el juego. Le aparecerá por pantalla la primera pregunta con su serie de alternativas de las que el jugador deberá elegir una antes de los 30 segundos, el servidor muestra el resultado de su respuesta y luego la siguiente pregunta, al finalizar las diez preguntas se muestra una tabla de resultados parciales con el puntaje de aquellos jugadores que ya han terminado y se quedara esperando que le envíen los resultados aquellos que vayan terminando.
+
+	2.4 - Esquema del código cliente:
+	
+		while ( Conexión ok )
+			IngresarNombre
+			Conectarse_al_Juego (Nombre)[1]
+		endw
+		empezar=false
+		wihile  ( not empezar )
+			if (Crear_Juego) then
+				Crear Juego[2]
+			endif
+			if (Creador y Decidir_Empezar) then
+				Empezar_Juego[3]
+			endif
+			if (Unir_Juego) then
+				Unir_Juego[4]
+			endif
+			if (Salir_Juego) then
+				Salir_Juego[5]
+			endif
+			if (empezo juego) then
+				empezar = true
+			endif
+			if ( ver_lista_jugadores ) then
+				Pedir_Lista_Jugadores[6]
+				Esperar_Lista
+			endif
+		endw
+		For 1 a 10
+			Pregunta = EsperandoPreguntas()
+			Enviar_Respuesta (Pregunta,Resp,Tiempo)[7]
+			Esperar_Resultado
+		endfor
+		Esperando_Resumen
+
+	
+
+* Mensajes
+
+[1] 	CONE[nombre_jugador]
+[2]	CREA
+[3]	UNIR
+[4]	SALE
+[5]	EMPE
+[6]	LIST
+[7]	RESP [NUM_PREG] [RESP] [TIEMPO]
+
+
+3 - Formato de los Mensajes:
+
+	Los mensajes que se envían por la red están formados por un encabezado fijo de 4 bytes (LON) donde se encuentra la longitud de los datos, mas los DATOS de longitud variable.
+
+	Formato de los mensajes:
+
+           4 Bytes
+	+-----------+--------------------------------+
+	|    LON    |  DATOS (longitud varialble)    |
+	+-----------+--------------------------------+

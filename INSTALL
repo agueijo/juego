@@ -1,0 +1,50 @@
+/************************************************************************/
+/*        Juego de Preguntas y Respuestas (cliente/servidor)            */
+/*                        Internetworking                               */
+/*                Universidad Tecnológica Nacional                      */
+/*                   Facultad Regional La Plata                         */
+/*                    Buenos Aires - Argentina                          */
+/*                         Diciembre 2001                               */
+/*                                                                      */
+/*                          Agustín Eijo                                */
+/*                       agu@frlp.utn.edu.ar                            */
+/*                                                                      */
+/*                          Andres Artola                               */
+/*                     andres_artola@yahoo.com                          */
+/************************************************************************/
+
+Servidor:
+
+	Compilar:
+		
+		1) cd servidor/
+		2) make clean
+		3) make
+
+	Ejecutar:
+
+		4) ./servidor [puerto]
+		   (puerto es un parametro opcional para especificar en 
+		    que puerto debe escuchar, por defecto es 2222)
+
+	Para moverlo a otro directorio son necesarios los archivos:
+				servidor
+				preg.txt
+
+Cliente:
+
+	Compilar:
+
+		1) cd cliente/
+		2) make clean
+		3) make
+
+	Ejecutar:
+
+		4) ./cliente [servidor [puerto]]
+		   (servidor y puerto son dos parametros opcionales para
+		    espicificar el nombre de host y puerto del servidor
+		    por defecto se conectar� a localhost 2222)
+
+	Para moverlo a otro directorio solo es necesario el archivo:
+				cliente

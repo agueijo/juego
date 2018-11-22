@@ -1,0 +1,205 @@
+El tamaño del header IP es:
+1 - Fijo , medido en Bytes.
+2 - Variable, medido en Bites.
+3 - Variable, medido en palabras de 32 Bites.
+3
+Cuando un datagrama IP es fragmentado ¿cada fragmento conserva el "total length del paquete original"?
+1 - Si, pero cambia el campo fragment.
+2 - No.
+3 - No, pero se conserva la longitud del header.
+2
+El numero IP 14.24.67.3 es una direccion de clase:
+1 - Clase a
+2 - Clase b
+3 - Clase c
+1
+El numero IP 123.31.21.62 es una direccion de clase:
+1 - Clase a
+2 - Clase b
+3 - Clase c
+1
+El numero IP 163.230.200.27 es una direccion de clase:
+1 - Clase a
+2 - Clase b
+3 - Clase c
+2
+El numero IP 241.222.333.333 es una direccion de clase:
+1 - Clase a
+2 - Clase e
+3 - No existe
+3
+Cuando el Bit Copy de las opciones del datagrama IP tiene un valor 1 significa que:
+1 - Que la opcion debe replicarse en cada fragmento.
+2 - Que la opcion solo debe incluirse en el primer fragmento.
+3 - Que las opciones deben descartarse.
+1
+¿Cambia la direccion de MAC de una trama en cada salto de ruteo?
+1 - No.
+2 - Si.
+3 - Depende de un caso particular.
+2
+Las tecnologias de Internetworking se aplican en redes:
+1 - Lan
+2 - Wan
+3 - Ambos tipos
+3
+En una trama Ethernet se encapsulan:
+1 - Solamente datagramas IP
+2 - Solamente mensajes ARP
+3 - opcion1 y opcion2
+3
+En un datagrama IP se encapsulan :
+1 - Un datagrama Udp o un mensaje ICMP.
+2 - Un datagrama Udp , un mensaje ICMP o un segmento TCP.
+3 - Un datagrama Udp , un mensaje ICMP o datos de la Aplicacion.
+2
+El campo Frame Type de una trama Ethernet tiene el valor 0x0806. Significa que:
+1 - En el campo de datos del frame se encapsula un mensaje ARP.
+2 - En el campo de datos del frame se encapsula un datagrama IP.
+3 - En el campo de datos del frame se encapsula un segmento TCP.
+1
+El campo Hard Size de una trama Ethernet especifica:
+1 - La longitud de direcciones de cada capa 3(4 Bytes).
+2 - La longitud de direcciones de cada capa 2(6 Bytes).
+3 - La longitud de las palabras de memoria que maneja el BIOS de la maquina.
+2
+El campo Protocol Size de una trama Ethernet especifica:
+1 - La longitud de direcciones de capa 3(4 Bytes).
+2 - La longitud de direcciones de capa 2(6 Bytes).
+3 - La longitud de las palabras de memoria que maneja el BIOS de la maquina.
+1
+El campo TOS de un mensaje ICMP se utiliza para:
+1 - El mensaje original no llego a destino porque esta ultima tiene lo que se conoce como "TOS"
+2 - Para dar prioridades de paquetes a desechar cuando ocurre algun inconveniente. 
+3 - Para indicar el estado de "Time Over System"
+2
+En el campo de datos del mensaje ICMP(si es por error y no por query) se almacena:
+1 - Una lista de los errores que ocurrieron.
+2 - Exactamente el error que ocurrio.
+3 - El datagrama que fallo(el contenido depende de los valores de los campos type y code).
+3
+La funcion SOCKET de las primitivas de Berkeley para Linux devuelve:
+1 - Un socket descriptor.
+2 - Un puntero al IP de la maquina con la que se esta queriendo conectar.
+3 - Ninguna de las opciones 1 y 2.
+1
+Un SOCKET:
+1 - Es el puerto por defecto que esta utilizando el Browser de la maquina.
+2 - Es una combinacion del numero de IP y del numero de MAC.
+3 - Es una combinacion del numero de IP y del puerto ,de la maquina con la que quiero establecer una conexion.
+3
+La funcion CLOSE de las primitivas de Berkeley para Linux se utiliza para:
+1 - Cerrar una aplicacion.
+2 - Liberar una conexion establecida atraves de una funcion socket.
+3 - Ninguna de las opciones 1 y 2.
+2
+La informacion se puede enviar a traves de:
+1 - Formato Big Endian.
+2 - Formato Little Endian.
+3 - Ambos formatos
+3
+Cual es el rango de direcciones para 10.1.2.8/30:
+1 - 10.1.2.8 al 10.1.2.11
+2 - 10.1.2.9 al 10.1.2.10
+3 - 10.1.2.8 al 10.1.2.12
+1
+Cual es el rango de direcciones de hosts para 192.168.2.128/25:
+1 - 192.168.2.128 al 192.168.2.255
+2 - 192.168.2.134 al 192.168.2.189
+3 - 192.168.2.129 al 192.168.2.254
+3
+Cual es la direccion de broadcast de 172.16.128.0/23:
+1 - 172.16.128.127
+2 - 172.16.129.255
+3 - 172.16.130.255
+2
+Se tiene el rango 131.40.0.0/16 y se piden 8 subredes;cual es el prefijo mas preciso:
+1 - /19
+2 - /18
+3 - /16
+1
+El protocolo de ruteo OSPF(IGP) se utiliza en:
+1 - una subred de una red WAN como protocolo de ruteo entre los routers IGP.
+2 - una red LAN como protocolo de ruteo interno(intranet). 
+3 - ninguna de ellas.
+2
+El protocolo de ruteo  BGP(EGP) se utiliza en:
+1 - una subred de una red WAN como protocolo de ruteo entre los routers IGP.
+2 - una red LAN como protocolo de ruteo interno(intranet). 
+3 - ninguna de ellas.
+1
+El protocolo de ruteo RIP se utiliza en:
+1 - En redes WAN.
+2 - En grandes redes LAN con distribucion desconocida y desbalanceada de routers.
+3 - Solo en pequeñas Intrantes o redes LAN en donde se conoce la distribucion exacta de routers.
+3
+El servicio de DNS se implementa mediante:
+1 - Un sistema multiagente basado en redes neuronales con capacidad de aprendizaje. 
+2 - Un sistema experto con Base de Conocimiento(KB) y Motor de Inferencias(MI). 
+3 - Una base de Datos distribuida y jerarquica.
+3
+¿Cuál de las capas del modelo OSI está a cargo de la compresión de archivos?
+1 - Transporte
+2 - Sesión
+3 - Presentación
+3
+En un segmento TCP, ¿cuál de los campos define la cantidad de octetos que un receptor está dispuesto a aceptar?
+1 - Checksum
+2 - Windows Size
+3 - HLEN
+2
+¿Cuál de las siguientes opciones es una de las funciones principales de la capa de presentación?
+1 - Control de diálogo
+2 - Administrar aplicaciones
+3 - Compresión de datos
+3
+¿Cuáles son los puertos reservados por TCP y UDP para las aplicaciones públicas?
+1 - Números desde 255 hasta 1023
+2 - Números menores que 255
+3 - Números mayores que 1023
+2
+¿Cuál de las capas del modelo OSI tiene como función principal regular el flujo de información desde el origen hasta el destino de forma confiable y precisa?
+1 - Presentación
+2 - Sesión
+3 - Transporte
+3
+¿Cuál es el término que se usa para referirse a la cantidad de datos que se pueden transmitir antes de recibir un acuse de recibo?
+1 - Tamaño de ventana
+2 - Conexión cerrada
+3 - Saludo de dos vías
+1
+¿Cuál es el término correcto que se aplica a la secuencia que sincroniza una conexión en ambos extremos antes de que se intercambien datos del usuario?
+1 - Ventanas deslizantes
+2 - Retransmisión de segmentos
+3 - Saludo de tres vías
+3
+¿Cuál de las siguientes opciones es una característica del TCP?
+1 - No confiable
+2 - No orientado a conexión
+3 - Divide los mensajes salientes en segmentos
+3
+¿En qué capa del modelo OSI opera TCP?
+1 - Capa 4
+2 - Capa 5
+3 - Capa 6
+1
+¿Cuál de las siguientes opciones describe el protocolo TCP?
+1 - No confiable
+2 - Orientado a conexión
+3 - No orientado a conexión
+2
+¿Qué protocolo simple intercambia datagramas sin acuses de recibo ni entrega garantizada?
+1 - TCP
+2 - ICMP
+3 - UDP
+3
+Como TCP reensambla los segmentos en mensajes completos, ¿qué sucede si falta un número de secuencia en la serie?
+1 - El segmento se descarta
+2 - Se retransmite el segmento faltante
+3 - Todos los segmentos se retransmiten desde el principio
+2
+¿Cuál de las capas del modelo OSI tiene la función de presentar los datos de forma tal que los dispositivos receptores puedan comprenderlos?
+1 - Transporte
+2 - Sesión
+3 - Presentación
+3

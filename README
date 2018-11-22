@@ -1,0 +1,21 @@
+/************************************************************************/
+/*        Juego de Preguntas y Respuestas (cliente/servidor)            */
+/*                        Internetworking                               */
+/*                Universidad Tecnológica Nacional                      */
+/*                   Facultad Regional La Plata                         */
+/*                    Buenos Aires - Argentina                          */
+/*                         Diciembre 2001                               */
+/*                                                                      */
+/*                          Agustín Eijo                                */
+/*                       agu@frlp.utn.edu.ar                            */
+/*                                                                      */
+/*                          Andres Artola                               */
+/*                     andres_artola@yahoo.com                          */
+/************************************************************************/
+
+Informacion de directorios:
+
+	doc/		documentacion (juego.pdf ) y texto ( juego.txt )
+	cliente/ 	fuentes cliente
+	servidor/	fuentes servidor
+	protocolo/	fuerntes del protocolo de red
