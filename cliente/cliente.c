@@ -525,7 +525,7 @@ void salir_juego(void)
     enviar_mensaje(sd, mensaje);
 }
 
-void esperar_pregunta(num_preg)
+void esperar_pregunta(int num_preg)
 {
     char preg[MAXMENS];
     char op1[MAXMENS];

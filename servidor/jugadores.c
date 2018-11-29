@@ -42,7 +42,7 @@ void ini_jugadores(void)
 
     cant_jug = 0;
 
-    for (id = 1; id <= FD_SETSIZE; id++) {
+    for (id = 1; id < FD_SETSIZE; id++) {
 
 	j[id].nom[0] = '\0';
 
@@ -126,7 +126,7 @@ int jugador_duplicado(char *nom)
 
     dup = 0;
 
-    while ((!dup) && (id <= FD_SETSIZE)) {
+    while ((!dup) && (id < FD_SETSIZE)) {
 
 	if (j[id].numpreg != 0) {
 
