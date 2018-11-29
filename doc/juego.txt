@@ -3,41 +3,41 @@
 
                         Internetworking
 
-             Universidad TecnolÛgica Nacional
+             Universidad Tecnol√≥gica Nacional
                  Facultad Regional La Plata
                   Buenos Aires - Argentina
                       Diciembre 2001
 
-                       AgustÌn Eijo
+                       Agust√≠n Eijo
                     agu@frlp.utn.edu.ar
 
                        Andres Artola
                    andres_artola@yahoo.com
 
 
-1 - DescripciÛn del juego:
+1 - Descripci√≥n del juego:
 
 
-	El juego consiste en una serie de diez preguntas de opciÛn m˙ltiple de internetworking. Las cuales ser·n tomadas de una base de datos en forma aleatoria y deber·n ser contestadas por los jugadores. 
+	El juego consiste en una serie de diez preguntas de opci√≥n m√∫ltiple de internetworking. Las cuales ser√°n tomadas de una base de datos en forma aleatoria y deber√°n ser contestadas por los jugadores. 
 
 	Al finalizar las diez respuestas se mostrara un cuadro de puntajes indicando a los participantes el resultado final del juego.
 
-	PuntuaciÛn: cada respuesta correcta sumara un punto al participante, el jugador que al finalizar el juego obtenga mas puntaje ser· el ganador, en caso de igualdad de puntos el que menos tiempo haya tardado en responder las diez preguntas gana.
+	Puntuaci√≥n: cada respuesta correcta sumara un punto al participante, el jugador que al finalizar el juego obtenga mas puntaje ser√° el ganador, en caso de igualdad de puntos el que menos tiempo haya tardado en responder las diez preguntas gana.
 
 
-2 - DescripciÛn del funcionamiento del software:
+2 - Descripci√≥n del funcionamiento del software:
 
-El software contar· con dos mÛdulos: 
+El software contar√° con dos m√≥dulos: 
 * El servidor: encargado de realizar preguntas a los jugadores, 
 * Los clientes: participantes del juego.
 
 2.1 - Servidor:
 
-Deber· ser ejecutado con anterioridad a los clientes, y tendr· dos etapas en un primer momento solo aceptara conexiones, el primero en crear un juego tendr· el control del mismo los dem·s participantes podr·n unirse o no al juego, cuando el creador del juego lo decida comenzara el juego.
+Deber√° ser ejecutado con anterioridad a los clientes, y tendr√° dos etapas en un primer momento solo aceptara conexiones, el primero en crear un juego tendr√° el control del mismo los dem√°s participantes podr√°n unirse o no al juego, cuando el creador del juego lo decida comenzara el juego.
 
-Luego de la orden de comenzar juego, el servidor toma en forma aleatoria de una base de datos la primer pregunta a realizar, y la envÌa a todos los clientes quedando de esta manera en modo escucha esperando por las respuestas de los clientes, cada respuesta ser· la opciÛn elegida por el jugador, en ese momento debe validarse la respuesta y almacenar el puntaje correspondiente, enviando el resultado para luego enviar la siguiente pregunta. Al finalizar las diez preguntas se le envÌa al cliente el puntaje obtenido y el tiempo que tardo en responder las diez preguntas. Al finalizar el juego se enviara una tabla comparativa indicando el puntaje obtenido y el tiempo de respuesta de cada jugador que ya terminaron de jugar y se quedara esperando el resultado de los jugadores que aun no hayan terminado.
+Luego de la orden de comenzar juego, el servidor toma en forma aleatoria de una base de datos la primer pregunta a realizar, y la env√≠a a todos los clientes quedando de esta manera en modo escucha esperando por las respuestas de los clientes, cada respuesta ser√° la opci√≥n elegida por el jugador, en ese momento debe validarse la respuesta y almacenar el puntaje correspondiente, enviando el resultado para luego enviar la siguiente pregunta. Al finalizar las diez preguntas se le env√≠a al cliente el puntaje obtenido y el tiempo que tardo en responder las diez preguntas. Al finalizar el juego se enviara una tabla comparativa indicando el puntaje obtenido y el tiempo de respuesta de cada jugador que ya terminaron de jugar y se quedara esperando el resultado de los jugadores que aun no hayan terminado.
 
-Las Preguntas ser·n almacenadas en un archivo de texto preg.txt con el siguiente formato
+Las Preguntas ser√°n almacenadas en un archivo de texto preg.txt con el siguiente formato
 
 	Pregunta 1
 	1 - Opcion 1
@@ -52,17 +52,17 @@ Las Preguntas ser·n almacenadas en un archivo de texto preg.txt con el siguiente
 	Pregunta n 
 	...
 
-2.2 - Esquema del cÛdigo servidor:
+2.2 - Esquema del c√≥digo servidor:
 
 	empezar=false
 	while ( not empezar )
 		EsperarConexion
 		If ( jugadornuevo ) then
 			If (nombre_valido) then
-				ConexiÛn_OK [1]
+				Conexi√≥n_OK [1]
 				Agregar_Jugador (Nombre)
 			else
-				ConexiÛn_Rechazada [2]
+				Conexi√≥n_Rechazada [2]
 			endif
 		endif
 		If ( lista_jugadores ) then
@@ -100,7 +100,7 @@ Las Preguntas ser·n almacenadas en un archivo de texto preg.txt con el siguiente
 		endif
 	endw
 
-* Mensajes que se envÌan por la red:
+* Mensajes que se env√≠an por la red:
 
 [1] 	CONE OK
 [2]	DUPL
@@ -110,21 +110,21 @@ Las Preguntas ser·n almacenadas en un archivo de texto preg.txt con el siguiente
 [5]	CREA NO
 [6]	JUNO
 [7]	EMPE
-[8]	øPregunta?
-	1- OpciÛn 1
-	2- OpciÛn 2
-	3- OpciÛn 3
+[8]	¬øPregunta?
+	1- Opci√≥n 1
+	2- Opci√≥n 2
+	3- Opci√≥n 3
 [9]	RESP [1|0]
-[10]	[Jugador] [PuntuaciÛn] [Tiempo]
+[10]	[Jugador] [Puntuaci√≥n] [Tiempo]
 	RESU FIN
 
  2.3 - Cliente:
 
-	Una vez ejecutado el cliente deber· ingresar el nombre, si todavÌa no se creo un juego tiene la posibilidad de crearlo en caso contrario podr· decidir entre unirse o no al juego, cuando el creador del juego lo decida comenzar· el juego. Le aparecer· por pantalla la primera pregunta con su serie de alternativas de las que el jugador deber· elegir una antes de los 30 segundos, el servidor muestra el resultado de su respuesta y luego la siguiente pregunta, al finalizar las diez preguntas se muestra una tabla de resultados parciales con el puntaje de aquellos jugadores que ya han terminado y se quedara esperando que le envÌen los resultados aquellos que vayan terminando.
+	Una vez ejecutado el cliente deber√° ingresar el nombre, si todav√≠a no se creo un juego tiene la posibilidad de crearlo en caso contrario podr√° decidir entre unirse o no al juego, cuando el creador del juego lo decida comenzar√° el juego. Le aparecer√° por pantalla la primera pregunta con su serie de alternativas de las que el jugador deber√° elegir una antes de los 30 segundos, el servidor muestra el resultado de su respuesta y luego la siguiente pregunta, al finalizar las diez preguntas se muestra una tabla de resultados parciales con el puntaje de aquellos jugadores que ya han terminado y se quedara esperando que le env√≠en los resultados aquellos que vayan terminando.
 
-	2.4 - Esquema del cÛdigo cliente:
+	2.4 - Esquema del c√≥digo cliente:
 	
-		while ( ConexiÛn ok )
+		while ( Conexi√≥n ok )
 			IngresarNombre
 			Conectarse_al_Juego (Nombre)[1]
 		endw
@@ -172,7 +172,7 @@ Las Preguntas ser·n almacenadas en un archivo de texto preg.txt con el siguiente
 
 3 - Formato de los Mensajes:
 
-	Los mensajes que se envÌan por la red est·n formados por un encabezado fijo de 4 bytes (LON) donde se encuentra la longitud de los datos, mas los DATOS de longitud variable.
+	Los mensajes que se env√≠an por la red est√°n formados por un encabezado fijo de 4 bytes (LON) donde se encuentra la longitud de los datos, mas los DATOS de longitud variable.
 
 	Formato de los mensajes:
 

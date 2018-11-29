@@ -1,12 +1,12 @@
 /************************************************************************/
 /*        Juego de Preguntas y Respuestas (cliente/servidor)            */
 /*                        Internetworking                               */
-/*                Universidad Tecnológica Nacional                      */
+/*                Universidad TecnolÃ³gica Nacional                      */
 /*                   Facultad Regional La Plata                         */
 /*                    Buenos Aires - Argentina                          */
 /*                         Diciembre 2001                               */
 /*                                                                      */
-/*                          Agustín Eijo                                */
+/*                          AgustÃ­n Eijo                                */
 /*                       agu@frlp.utn.edu.ar                            */
 /*                                                                      */
 /*                          Andres Artola                               */
@@ -534,7 +534,7 @@ void esperar_pregunta(int num_preg)
 
     leer_mensaje(sd, preg);
 
-    printf("\nPREGUNTA N° %d \n\n ", num_preg);
+    printf("\nPREGUNTA NÂ° %d \n\n ", num_preg);
 
     printf("%s\n\n", preg);
 
@@ -567,7 +567,7 @@ void enviar_respuesta(int num_preg)
 
     while ((opcion != 1) && (opcion != 2) && (opcion != 3) && (opcion != 4)) {
 
-	printf("¿Respuesta (1,2,3,4)? ==> ");
+	printf("Â¿Respuesta (1,2,3,4)? ==> ");
 
 	fflush(stdout);
 

@@ -1,12 +1,12 @@
 /************************************************************************/
 /*        Juego de Preguntas y Respuestas (cliente/servidor)            */
 /*                        Internetworking                               */
-/*                Universidad Tecnológica Nacional                      */
+/*                Universidad TecnolÃ³gica Nacional                      */
 /*                   Facultad Regional La Plata                         */
 /*                    Buenos Aires - Argentina                          */
 /*                         Diciembre 2001                               */
 /*                                                                      */
-/*                          Agustín Eijo                                */
+/*                          AgustÃ­n Eijo                                */
 /*                       agu@frlp.utn.edu.ar                            */
 /*                                                                      */
 /*                          Andres Artola                               */

@@ -1,9 +1,9 @@
-El tamaño del header IP es:
+El tamaÃ±o del header IP es:
 1 - Fijo , medido en Bytes.
 2 - Variable, medido en Bites.
 3 - Variable, medido en palabras de 32 Bites.
 3
-Cuando un datagrama IP es fragmentado ¿cada fragmento conserva el "total length del paquete original"?
+Cuando un datagrama IP es fragmentado Â¿cada fragmento conserva el "total length del paquete original"?
 1 - Si, pero cambia el campo fragment.
 2 - No.
 3 - No, pero se conserva la longitud del header.
@@ -33,7 +33,7 @@ Cuando el Bit Copy de las opciones del datagrama IP tiene un valor 1 significa q
 2 - Que la opcion solo debe incluirse en el primer fragmento.
 3 - Que las opciones deben descartarse.
 1
-¿Cambia la direccion de MAC de una trama en cada salto de ruteo?
+Â¿Cambia la direccion de MAC de una trama en cada salto de ruteo?
 1 - No.
 2 - Si.
 3 - Depende de un caso particular.
@@ -131,75 +131,75 @@ El protocolo de ruteo  BGP(EGP) se utiliza en:
 El protocolo de ruteo RIP se utiliza en:
 1 - En redes WAN.
 2 - En grandes redes LAN con distribucion desconocida y desbalanceada de routers.
-3 - Solo en pequeñas Intrantes o redes LAN en donde se conoce la distribucion exacta de routers.
+3 - Solo en pequeÃ±as Intrantes o redes LAN en donde se conoce la distribucion exacta de routers.
 3
 El servicio de DNS se implementa mediante:
 1 - Un sistema multiagente basado en redes neuronales con capacidad de aprendizaje. 
 2 - Un sistema experto con Base de Conocimiento(KB) y Motor de Inferencias(MI). 
 3 - Una base de Datos distribuida y jerarquica.
 3
-¿Cuál de las capas del modelo OSI está a cargo de la compresión de archivos?
+Â¿CuÃ¡l de las capas del modelo OSI estÃ¡ a cargo de la compresiÃ³n de archivos?
 1 - Transporte
-2 - Sesión
-3 - Presentación
+2 - SesiÃ³n
+3 - PresentaciÃ³n
 3
-En un segmento TCP, ¿cuál de los campos define la cantidad de octetos que un receptor está dispuesto a aceptar?
+En un segmento TCP, Â¿cuÃ¡l de los campos define la cantidad de octetos que un receptor estÃ¡ dispuesto a aceptar?
 1 - Checksum
 2 - Windows Size
 3 - HLEN
 2
-¿Cuál de las siguientes opciones es una de las funciones principales de la capa de presentación?
-1 - Control de diálogo
+Â¿CuÃ¡l de las siguientes opciones es una de las funciones principales de la capa de presentaciÃ³n?
+1 - Control de diÃ¡logo
 2 - Administrar aplicaciones
-3 - Compresión de datos
+3 - CompresiÃ³n de datos
 3
-¿Cuáles son los puertos reservados por TCP y UDP para las aplicaciones públicas?
-1 - Números desde 255 hasta 1023
-2 - Números menores que 255
-3 - Números mayores que 1023
+Â¿CuÃ¡les son los puertos reservados por TCP y UDP para las aplicaciones pÃºblicas?
+1 - NÃºmeros desde 255 hasta 1023
+2 - NÃºmeros menores que 255
+3 - NÃºmeros mayores que 1023
 2
-¿Cuál de las capas del modelo OSI tiene como función principal regular el flujo de información desde el origen hasta el destino de forma confiable y precisa?
-1 - Presentación
-2 - Sesión
+Â¿CuÃ¡l de las capas del modelo OSI tiene como funciÃ³n principal regular el flujo de informaciÃ³n desde el origen hasta el destino de forma confiable y precisa?
+1 - PresentaciÃ³n
+2 - SesiÃ³n
 3 - Transporte
 3
-¿Cuál es el término que se usa para referirse a la cantidad de datos que se pueden transmitir antes de recibir un acuse de recibo?
-1 - Tamaño de ventana
-2 - Conexión cerrada
-3 - Saludo de dos vías
+Â¿CuÃ¡l es el tÃ©rmino que se usa para referirse a la cantidad de datos que se pueden transmitir antes de recibir un acuse de recibo?
+1 - TamaÃ±o de ventana
+2 - ConexiÃ³n cerrada
+3 - Saludo de dos vÃ­as
 1
-¿Cuál es el término correcto que se aplica a la secuencia que sincroniza una conexión en ambos extremos antes de que se intercambien datos del usuario?
+Â¿CuÃ¡l es el tÃ©rmino correcto que se aplica a la secuencia que sincroniza una conexiÃ³n en ambos extremos antes de que se intercambien datos del usuario?
 1 - Ventanas deslizantes
-2 - Retransmisión de segmentos
-3 - Saludo de tres vías
+2 - RetransmisiÃ³n de segmentos
+3 - Saludo de tres vÃ­as
 3
-¿Cuál de las siguientes opciones es una característica del TCP?
+Â¿CuÃ¡l de las siguientes opciones es una caracterÃ­stica del TCP?
 1 - No confiable
-2 - No orientado a conexión
+2 - No orientado a conexiÃ³n
 3 - Divide los mensajes salientes en segmentos
 3
-¿En qué capa del modelo OSI opera TCP?
+Â¿En quÃ© capa del modelo OSI opera TCP?
 1 - Capa 4
 2 - Capa 5
 3 - Capa 6
 1
-¿Cuál de las siguientes opciones describe el protocolo TCP?
+Â¿CuÃ¡l de las siguientes opciones describe el protocolo TCP?
 1 - No confiable
-2 - Orientado a conexión
-3 - No orientado a conexión
+2 - Orientado a conexiÃ³n
+3 - No orientado a conexiÃ³n
 2
-¿Qué protocolo simple intercambia datagramas sin acuses de recibo ni entrega garantizada?
+Â¿QuÃ© protocolo simple intercambia datagramas sin acuses de recibo ni entrega garantizada?
 1 - TCP
 2 - ICMP
 3 - UDP
 3
-Como TCP reensambla los segmentos en mensajes completos, ¿qué sucede si falta un número de secuencia en la serie?
+Como TCP reensambla los segmentos en mensajes completos, Â¿quÃ© sucede si falta un nÃºmero de secuencia en la serie?
 1 - El segmento se descarta
 2 - Se retransmite el segmento faltante
 3 - Todos los segmentos se retransmiten desde el principio
 2
-¿Cuál de las capas del modelo OSI tiene la función de presentar los datos de forma tal que los dispositivos receptores puedan comprenderlos?
+Â¿CuÃ¡l de las capas del modelo OSI tiene la funciÃ³n de presentar los datos de forma tal que los dispositivos receptores puedan comprenderlos?
 1 - Transporte
-2 - Sesión
-3 - Presentación
+2 - SesiÃ³n
+3 - PresentaciÃ³n
 3
