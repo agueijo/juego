@@ -597,7 +597,7 @@ void enviar_respuesta(int num_preg)
 
 	if ((opcion == 1) || (opcion == 2) || (opcion == 3) || (opcion == 4)) {
 
-	    snprintf(respuesta, MAXMENS, "RESP %2d %d %5d", num_preg,
+	    snprintf(respuesta, MAXMENS, "RESP %2d %d %5ld", num_preg,
 		     opcion, (time(NULL) - empezo));
 
 	    enviar_mensaje(sd, respuesta);

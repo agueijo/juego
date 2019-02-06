@@ -56,7 +56,7 @@ void agregar_jugador(int id, char *nom)
 {
     cant_jug++;
 
-    sprintf(j[id].nom, nom);
+    snprintf(j[id].nom, 9, "%s", nom);
 
     j[id].numpreg = 1;
 
@@ -92,7 +92,7 @@ int cantidad_jugadores(void)
 void
 ver_jugador(int id, char *nom, int *numpreg, int *correctas, int *tiempo)
 {
-    sprintf(nom, j[id].nom);
+    snprintf(nom, 9, "%s", j[id].nom);
 
     *numpreg = j[id].numpreg;
 
@@ -103,7 +103,7 @@ ver_jugador(int id, char *nom, int *numpreg, int *correctas, int *tiempo)
 
 void ver_nombre(int id, char *nom)
 {
-    sprintf(nom, j[id].nom);
+    snprintf(nom, 9, "%s", j[id].nom);
 }
 
 
